@@ -1,0 +1,208 @@
+.slyder {
+  padding-top: 40px;
+  text-align: center;
+  position: relative;
+
+  @include from($screen-max) {
+    margin-top: -220px;
+  }
+
+  &__images {
+    position: relative;
+    margin: 35px auto;
+    width: 251px;
+    height: 240px;
+
+    @include from($screen-sm) {
+      width: 545px;
+      height: 517px;
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+    margin: 0 auto;
+    width: 251px;
+    height: 240px;
+    overflow: hidden;
+    z-index: 3;
+
+    @include from($screen-sm) {
+      width: 545px;
+      height: 517px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 545px;
+        height: 517px;
+        background-image: linear-gradient(
+          $color-white 0,
+          $color-white 163px,
+          $color-light-gray 163px
+        );
+        z-index: -1;
+      }
+    }
+  }
+
+  &__image {
+    &--after,
+    &--before {
+      position: absolute;
+      width: 251px;
+      height: 240px;
+      top: 0;
+      left: 0;
+      background-repeat: no-repeat;
+      background-color: $color-light-gray;
+
+      @include from($screen-sm) {
+        background-color: transparent;
+        width: 545px;
+        height: 517px;
+      }
+    }
+
+    &--before {
+      background-image: url("../img/cat-before.png");
+
+      @include from($screen-sm) {
+        background-image: url("../img/cat-before-large.png");
+      }
+    }
+
+    &--after {
+      background-image: url("../img/cat-after.png");
+
+      @include from($screen-sm) {
+        background-image: url("../img/cat-after-large.png");
+      }
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button {
+    font: inherit;
+    color: inherit;
+    border: 0;
+    background: 0 0;
+    padding: 0;
+    margin: 0;
+    text-transform: uppercase;
+    border-bottom: 1px dotted rgba($color-black, 0.3);
+    line-height: 1.5;
+
+    @include from($screen-sm) {
+      font-size: 20px;
+    }
+
+    &:hover,
+    &:focus {
+      border-style: solid;
+    }
+
+    &:active {
+      border-style: none;
+    }
+  }
+
+  &__scale {
+    position: relative;
+    width: 84px;
+    height: 14px;
+    border: 1px solid $color-border;
+    border-radius: 6px;
+    margin: 0 20px;
+    background-color: $color-white;
+
+    @include from($screen-sm) {
+      position: static;
+      margin: 0 40px;
+      width: 430px;
+      height: 6px;
+      border: none;
+      background-color: $color-scale-bg;
+    }
+  }
+
+  &__point {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    background-color: $color-dim-green;
+    width: 35px;
+    height: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+
+    @include from($screen-sm) {
+      position: relative;
+      top: -14px;
+      width: 34px;
+      height: 34px;
+      background-color: $color-white;
+      border: 1px solid $color-scale-btn-bg;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+      border-radius: 50%;
+
+      &:hover,
+      &:focus {
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+      }
+
+      &:active {
+        border: 2px solid #7cb35a;
+        box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.3);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        background-color: $color-dim-green;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.slider__before,
+.slider__after {
+  bottom: 0;
+}
+
+.slider__before:checked ~ .slyder__images .slyder__wrapper {
+  width: 0;
+}
+
+.slider__after:checked ~ .slider__images .slyder__wrapper {
+  width: 100%;
+}
+
+.slider__before:checked ~ .slyder__controls .slyder__point {
+  left: 5px;
+
+  @include from($screen-sm) {
+    left: -14px;
+  }
+}
+
+.slider__after:checked ~ .slyder__controls .slyder__point {
+  left: 42px;
+
+  @include from($screen-sm) {
+    left: 410px;
+  }
+}

@@ -1,0 +1,116 @@
+.navigation {
+  text-align: center;
+  margin-left: -20px;
+  margin-right: -20px;
+
+  @include from($screen-sm) {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    flex: 1 1 75%;
+  }
+
+  &__list {
+    display: none;
+
+    @include to(767px) {
+      .no-js .navigation & {
+        display: block;
+      }
+    }
+
+    @include from($screen-sm) {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin: 0 -16px;
+    }
+  }
+
+  &__item {
+    border-top: 1px solid $color-border-menu;
+
+    @include from($screen-sm) {
+      border-top: none;
+      padding: 16px;
+    }
+  }
+
+  &__links {
+    font: inherit;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-dark-black;
+    font-size: 20px;
+    padding: 20px 0;
+    transition: background-color 0.3s;
+
+    @include from($screen-sm) {
+      font-size: 18px;
+      padding: 0;
+
+      &.active::after {
+        content: "";
+        display: block;
+        position: relative;
+        bottom: -10px;
+        background-color: $color-dim-green;
+        width: 100%;
+        height: 2px;
+      }
+    }
+
+    @include from($screen-max) {
+      font-size: 20px;
+
+      &.active::after {
+        bottom: -15px;
+      }
+
+      .navigation--head &.active::after {
+        background-color: $color-white;
+      }
+    }
+  }
+
+  &__links:hover,
+  &__links:focus {
+    color: rgba($color-dark-black, 0.6);
+  }
+
+  &__links:active {
+    color: rgba($color-dark-black, 0.3);
+  }
+
+  &__links.active,
+  &__links.active:focus,
+  &__links.active:hover {
+    outline: none;
+    cursor: default;
+    color: $color-dark-black;
+  }
+
+  @include from($screen-max) {
+    .navigation--head &__links {
+      color: $color-white;
+    }
+
+    .navigation--head &__links:hover,
+    .navigation--head &__links:focus {
+      color: rgba($color-white, 0.6);
+    }
+
+    .navigation--head &__links:active {
+      color: rgba($color-white, 0.3);
+    }
+
+    .navigation--head &__links.active,
+    .navigation--head &__links.active:focus,
+    .navigation--head &__links.active:hover {
+      outline: none;
+      cursor: default;
+      color: $color-white;
+    }
+  }
+}

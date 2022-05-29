@@ -1,0 +1,19 @@
+.container {
+  margin: 0 auto;
+  padding-left: $set-container-offset;
+  padding-right: $set-container-offset;
+  max-width: $screen-max;
+  position: relative;
+
+  @include from($screen-sm) {
+    max-width: 768px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @include from($screen-max) {
+    max-width: $screen-max;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}

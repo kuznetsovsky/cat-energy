@@ -1,0 +1,137 @@
+.catalog-list {
+  border-top: 1px solid $color-line-gray;
+
+  &__items {
+    padding: 25px 20px 25px;
+    border-bottom: 1px solid $color-line-gray;
+  }
+
+  &__wrapper-prods {
+    display: flex;
+  }
+
+  &__images-block {
+    flex: 1 1 50%;
+  }
+
+  &__specifications {
+    flex: 1 1 50%;
+  }
+
+  &__wrapper-prods {
+    margin-bottom: 25px;
+  }
+
+  &__button {
+    max-width: none;
+  }
+
+  &__table {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__spec-name,
+  &__spec-value {
+    display: block;
+    flex: 1 1 50%;
+  }
+
+  &__spec-value {
+    text-align: right;
+  }
+
+  &__headline {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: $color-dark-black;
+  }
+
+  &__images {
+    width: 85px;
+    display: block;
+    margin: 10px auto;
+  }
+
+  @include from($screen-sm) {
+    border-top: none;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 768px;
+    margin: 0 auto;
+
+    &__items {
+      width: 324px;
+      padding: 0 37px 40px;
+      border-bottom: none;
+      background-color: $color-light-gray;
+      margin: 0 30px 150px;
+      display: flex;
+      flex-direction: column;
+
+      &--view {
+        background-color: $color-white;
+        border: 1px solid $color-border-menu;
+      }
+    }
+
+    &__images-block {
+      flex: 1 1 auto;
+    }
+
+    &__specifications {
+      flex: 1 1 auto;
+    }
+
+    &__wrapper-prods {
+      flex-direction: column;
+    }
+
+    &__images {
+      width: auto;
+      margin: -90px auto 20px;
+    }
+
+    &__headline {
+      margin-bottom: 30px;
+      font-size: 20px;
+      line-height: 1.3;
+      text-align: center;
+    }
+
+    &__table {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    &__row {
+      border-bottom: 1px solid $color-border;
+      margin-bottom: 10px;
+    }
+
+    &__wrapper-button {
+      margin-top: auto;
+    }
+
+    &__button {
+      font-size: 16px;
+      padding: 10px 0;
+    }
+  }
+
+  @include from($screen-max) {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    &__items {
+      width: 245px;
+      margin: 0 40px 150px;
+    }
+  }
+}

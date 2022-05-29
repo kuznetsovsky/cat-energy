@@ -1,0 +1,17 @@
+.section-additional-prods {
+  padding: 10px 0 35px;
+
+  &__headline-inner {
+    margin-bottom: 35px;
+  }
+
+  @include from($screen-max) {
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 40px 85px;
+    }
+  }
+}

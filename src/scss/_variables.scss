@@ -1,0 +1,51 @@
+// Colors:
+$color-black: #000;
+$color-dark-black: #111;
+$color-dark-black-two: #222;
+$color-white: #fff;
+$color-dim-green: #68b738;
+$color-bg-header-green: #63a73a;
+$color-light-gray: #f2f2f2;
+$color-text-gray: #444;
+$color-border-menu: #e6e6e6;
+$color-burger: #363636;
+$color-button-hover: #5eaa2f;
+$color-border: #cdcdcd;
+$color-border-hover: #cfcfcf;
+$color-scale-bg: #dcdcdc;
+$color-scale-btn-bg: #d1d1d1;
+$color-border-list: #d9d9d9;
+$color-footer-gray: #666;
+$color-line-gray: #ededed;
+$color-line-gray-radio: #d8d8d8;
+$color-plus-icon: #d3d3d3;
+$color-button-gray: #ebebeb;
+$color-red-req: #f88;
+$color-hover-radio: #bfbfbf;
+
+// Breakpoints:
+$screen-min: 320px;
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-max: 1300px;
+
+// --------------- SETTINGS ---------------
+
+// Page:
+$set-page-bg-color: $color-white;
+$set-page-text-color: $color-text-gray;
+
+// Fonts:
+$set-font-family: 'Oswald', Arial, Helvetica, sans-serif;
+$set-font-style: normal;
+$set-font-weight: normal;
+$set-font-size: 100%;
+$set-line-height: 1.286em;
+$set-letter-spacing: 0;
+
+// Offsets:
+$set-container-offset: 20px;
+
+// Section:
+$set-section-padding-top: 0;
+$set-section-padding-bottom: 0;

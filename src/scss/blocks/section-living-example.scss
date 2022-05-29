@@ -1,0 +1,17 @@
+.section-living-example {
+  background-color: $color-light-gray;
+  padding: 40px 0;
+
+  @include from($screen-sm) {
+    background-color: $color-white;
+    background-image: linear-gradient($color-white 0, $color-white 580px, $color-light-gray 580px);
+  }
+
+  @include from($screen-max) {
+    background-image: linear-gradient($color-white 0, $color-white 27%, $color-light-gray 27%);
+  }
+
+  &__section-title {
+    margin-bottom: 40px;
+  }
+}

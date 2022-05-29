@@ -1,0 +1,94 @@
+.section-map {
+  overflow: hidden;
+  margin-bottom: -3px;
+
+  &--inner {
+    background-color: $color-light-gray;
+  }
+
+  @include from($screen-max) {
+    position: relative;
+
+    .no-js & {
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+  }
+
+  &__address {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    max-width: 140px;
+
+    @include from($screen-sm) {
+      font-size: 16px;
+      max-width: 160px;
+      text-align: right;
+
+      &--city {
+        padding-top: 20px;
+        display: block;
+      }
+    }
+
+    &-block {
+      padding: 30px 20px;
+      display: flex;
+      justify-content: space-between;
+      line-height: 1.2;
+
+      @include from($screen-sm) {
+        padding: 65px 75px;
+        max-width: 768px;
+        margin: 0 auto;
+      }
+
+      @include from($screen-max) {
+        position: absolute;
+        top: 95px;
+        left: 10%;
+        background-color: white;
+        width: 580px;
+      }
+    }
+  }
+
+  &__desc {
+    text-transform: uppercase;
+    max-width: 140px;
+
+    @include from($screen-sm) {
+      max-width: 160px;
+      font-size: 20px;
+    }
+  }
+
+  .no-js &__api {
+    width: auto;
+    height: 390px;
+    background-image: url("../img/map-small.jpg");
+    background-repeat: no-repeat;
+    background-size: 768px 390px;
+    background-position: top center;
+
+    @include from($screen-sm) {
+      background-image: url("../img/map-medium.jpg");
+      height: 400px;
+      background-size: 1300px 400px;
+      background-position: top right;
+    }
+
+    @include from($screen-max) {
+      background-position: top center;
+    }
+  }
+
+  .no-js &__api--google {
+    display: none;
+  }
+
+  &__api--google {
+    width: 100%;
+    height: 390px;
+  }
+}

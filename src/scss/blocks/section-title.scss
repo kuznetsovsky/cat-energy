@@ -1,0 +1,10 @@
+.section-title {
+  font: inherit;
+  color: $color-dark-black;
+  font-size: 36px;
+  line-height: 1.2;
+
+  @include from($screen-sm) {
+    font-size: 60px;
+  }
+}

@@ -1,0 +1,12 @@
+.page {
+  height: 100%;
+  min-width: $screen-min;
+  font-size: $set-font-size;
+  line-height: $set-line-height;
+  font-weight: $set-font-weight;
+  letter-spacing: $set-letter-spacing;
+  font-family: $set-font-family, "Arial", sans-serif;
+  font-style: $set-font-style;
+  background-color: $set-page-bg-color;
+  color: $set-page-text-color;
+}

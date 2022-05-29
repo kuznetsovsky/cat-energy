@@ -1,0 +1,50 @@
+.button {
+  font: inherit;
+  color: inherit;
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 0;
+  max-width: 245px;
+  transition: background-color 0.3s, color 0.3s;
+  border: none;
+}
+
+.button--green,
+.button--sr-only {
+  background-color: $color-dim-green;
+  color: $color-white;
+
+  @include from($screen-sm) {
+    font-size: 20px;
+    padding: 15px;
+  }
+}
+
+.button--gray {
+  background-color: $color-light-gray;
+}
+
+.button--gray:hover,
+.button--gray:focus {
+  background-color: $color-button-gray;
+}
+
+.button--gray:active {
+  color: rgba($color-text-gray, 0.3);
+}
+
+.button--sr-only {
+  max-width: none;
+}
+
+.button--green:hover,
+.button--green:focus {
+  background-color: $color-button-hover;
+  color: $color-white;
+}
+
+.button--green:active {
+  color: rgba($color-white, 0.3);
+}

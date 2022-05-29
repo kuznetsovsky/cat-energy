@@ -1,0 +1,79 @@
+.present {
+  margin: 0 20px;
+
+  &__wrapper {
+    max-width: 708px;
+    height: 200px;
+    background-image: url("../img/present-bg.jpg");
+    background-repeat: no-repeat;
+    margin: 0 auto;
+  }
+
+  &__desc {
+    position: relative;
+    color: $color-white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+    max-width: 160px;
+    margin: 0 auto;
+    padding-top: 60px;
+
+    &::before {
+      content: '';
+      position: relative;
+      display: block;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-image: url("../img/present-icon.png");
+      background-repeat: no-repeat;
+      width: 55px;
+      height: 60px;
+    }
+  }
+
+  @include from($screen-sm) {
+    margin: 0 0 50px;
+
+    &__desc {
+      text-align: left;
+      margin-left: 450px;
+      padding-top: 10px;
+
+      &::before {
+        top: 55px;
+        left: -340px;
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @include from($screen-max) {
+    width: 245px;
+    height: 285px;
+    margin: 0;
+
+    &__wrapper {
+      width: 245px;
+      max-width: none;
+      height: 289px;
+      background-image: url("../img/present-bg-large.jpg");
+    }
+
+    &__desc {
+      width: 245px;
+      text-align: center;
+      margin-left: 50%;
+      padding-top: 110px;
+      transform: translateX(-50%);
+
+      &::before {
+        top: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

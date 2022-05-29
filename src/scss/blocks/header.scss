@@ -1,0 +1,52 @@
+.header {
+  @include from($screen-max) {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: -70px;
+      height: 696px;
+      width: 720px;
+      background-image: url("../img/index-background-desktop.jpg");
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+  }
+
+  @include from($screen-max) {
+    width: 1300px;
+    margin: 0 auto;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 66px;
+    min-height: 66px;
+    position: relative;
+
+    @include from($screen-sm) {
+      flex: 1 1 25%;
+    }
+  }
+
+  &__wrapper {
+    @include from($screen-sm) {
+      height: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include from($screen-max) {
+      height: 125px;
+    }
+  }
+
+  &--inner::before {
+    background-image: none;
+  }
+}

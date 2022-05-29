@@ -1,0 +1,67 @@
+.section-program-selection {
+  padding: 35px 0;
+  border-top: 1px solid $color-border-menu;
+
+  &__headline {
+    padding: 0 20px;
+    margin-bottom: 40px;
+    font-size: 36px;
+    line-height: 1.2;
+    color: $color-dark-black;
+  }
+
+  &__desc {
+    max-width: 270px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $color-dark-black;
+    line-height: 1.4;
+  }
+
+  @include from($screen-sm) {
+    border-top: none;
+    padding: 65px 0;
+
+    &__headline {
+      padding: 0 30px;
+      font-size: 60px;
+      margin: 0 auto 65px;
+      width: 768px;
+    }
+
+    &__desc {
+      max-width: 430px;
+      margin: 0;
+      padding: 0 40px;
+      font-size: 20px;
+    }
+
+    &__wrapper {
+      width: 768px;
+      margin: 0 auto 70px;
+      padding: 0 30px;
+    }
+  }
+
+  @include from($screen-max) {
+    border-top: none;
+    padding: 65px 0 80px;
+
+    &__headline {
+      padding: 0 40px;
+      width: 1300px;
+    }
+
+    &__desc {
+      max-width: 380px;
+      padding: 0;
+    }
+
+    &__wrapper {
+      width: 1300px;
+      padding: 0 40px;
+    }
+  }
+}

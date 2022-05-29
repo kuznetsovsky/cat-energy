@@ -1,0 +1,375 @@
+.forms {
+  &__fieldset {
+  }
+
+  &__content {
+    padding: 0 20px;
+    margin-bottom: 20px;
+
+    &--line {
+      border-top: 1px solid $color-line-gray;
+      padding: 30px 20px;
+
+      &:last-child {
+        border-bottom: 1px solid $color-line-gray;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    &-radio {
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__label {
+    white-space: nowrap;
+    padding-right: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: $color-dark-black-two;
+
+    &--alignment {
+      display: flex;
+      align-items: center;
+
+      &:hover > .forms__radio,
+      &:hover > .forms__checkbox {
+        border: 1px solid $color-hover-radio;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:active {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__legend {
+    width: 100%;
+  }
+
+  &__input-wrapper {
+    flex-grow: 1;
+    display: block;
+    position: relative;
+  }
+
+  &__inputs {
+    flex-grow: 1;
+    padding: 15px;
+    border: 1px solid $color-border-menu;
+    color: inherit;
+    font-family: $set-font-family;
+    text-transform: uppercase;
+
+    &--textarea {
+      width: 100%;
+      max-width: 100%;
+      resize: none;
+      min-height: 150px;
+    }
+
+    &--icons {
+      padding: 15px 45px 15px 15px;
+      width: 100%;
+    }
+
+    &--mail,
+    &--phone {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+    }
+
+    &--mail {
+      width: 20px;
+      height: 13px;
+    }
+
+    &--phone {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      border: 1px solid $color-border-hover;
+    }
+
+    &:focus {
+      border: 1px solid $color-text-gray;
+
+      & + .forms__inputs--mail,
+      & + .forms__inputs--phone {
+        fill: $color-dim-green;
+      }
+    }
+
+    &.invalid,
+    &:invalid {
+      border: 1px solid $color-red-req;
+
+      & + .forms__inputs--mail,
+      & + .forms__inputs--phone {
+        fill: $color-red-req;
+      }
+    }
+
+    &::placeholder {
+      color: inherit;
+      font-family: $set-font-family;
+      text-transform: uppercase;
+    }
+  }
+
+  &__radio {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $color-line-gray-radio;
+    margin-right: 15px;
+  }
+
+  &__input-radio:checked + .forms__radio {
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $color-dim-green;
+    }
+  }
+
+  &__input-radio:focus + .forms__radio,
+  &__input-checkbox:focus + .forms__checkbox {
+    outline: 2px dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
+  &__headline-inner {
+    margin-bottom: 35px;
+  }
+
+  &__checkbox {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid $color-line-gray-radio;
+    margin-right: 15px;
+  }
+
+  &__input-checkbox:checked + .forms__checkbox {
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: $color-dim-green;
+    }
+
+    &::before {
+      bottom: 8px;
+      left: 4px;
+      width: 10px;
+      height: 2px;
+      transform: rotateZ(45deg);
+    }
+
+    &::after {
+      bottom: 11px;
+      left: 8px;
+      width: 18px;
+      height: 2px;
+      transform: rotateZ(-55deg);
+    }
+  }
+
+  &__submit {
+    padding: 20px 20px 0;
+    text-align: center;
+  }
+
+  &__button {
+    max-width: none;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  &__submit-text {
+    display: inline-block;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .forms__input-radio:focus + .forms__radio,
+  .forms__input-checkbox:focus + .forms__checkbox {
+    border: 1px solid $color-hover-radio;
+  }
+
+  @include from($screen-sm) {
+    &__content {
+      max-width: 630px;
+      margin: 0 auto 85px;
+      padding: 0;
+
+      &--line {
+        padding: 25px;
+        border-left: 1px solid $color-line-gray;
+        border-right: 1px solid $color-line-gray;
+      }
+    }
+
+    &__headline-inner {
+      margin-bottom: 80px;
+    }
+
+    &__content {
+      &--flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+    }
+
+    &__row--flex {
+      margin-bottom: 35px;
+      flex: 1 1 50%;
+    }
+
+    &__submit {
+      padding: 0;
+      text-align: center;
+      max-width: 630px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+    }
+
+    &__button {
+      flex: 1 1 50%;
+      margin: 0;
+    }
+
+    &__submit-text {
+      flex: 1 1 50%;
+    }
+
+    &__label {
+      font-size: 20px;
+    }
+
+    &__inputs {
+      font-size: 16px;
+
+      &--mail {
+        top: 22px;
+        right: 20px;
+      }
+
+      &--phone {
+        top: 18px;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        line-height: 16px;
+      }
+    }
+
+    .forms__radio,
+    .forms__checkbox {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__input-checkbox:checked + .forms__checkbox {
+      &::before {
+        bottom: 13px;
+        left: 9px;
+      }
+
+      &::after {
+        bottom: 16px;
+        left: 13px;
+      }
+    }
+  }
+
+  @include from($screen-max) {
+    &__wrapper {
+      max-width: 1300px;
+      margin: 0 auto 80px;
+      padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+
+      & > .forms__content {
+        width: 570px;
+        margin: 0;
+      }
+
+      & > .forms__row {
+        width: 570px;
+        margin: 0;
+      }
+    }
+
+    &__content {
+      &--textarea {
+        max-width: 1300px;
+        padding: 0 40px;
+      }
+    }
+
+    &__content {
+      &--flex {
+        max-width: 1300px;
+        padding: 0 40px;
+      }
+    }
+
+    &__row {
+      padding: 0;
+
+      &--flex {
+        flex: 1 1 25%;
+      }
+    }
+
+    &__submit {
+      max-width: 1300px;
+      padding: 0 40px;
+    }
+
+    &__content {
+      &--clear {
+        margin: 0;
+        max-width: none;
+      }
+    }
+
+    &__submit-text {
+      text-align: left;
+      padding-left: 80px;
+    }
+  }
+}

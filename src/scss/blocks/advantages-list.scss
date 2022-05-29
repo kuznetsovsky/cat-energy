@@ -1,0 +1,125 @@
+.advantages-list {
+  @include from($screen-sm) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  &__items {
+    counter-increment: items;
+    margin-bottom: 20px;
+    position: relative;
+    min-height: 60px;
+
+    @include from($screen-sm) {
+      width: 256px;
+      padding: 120px 0 50px;
+      margin-bottom: 90px;
+    }
+
+    @include from($screen-max) {
+      margin-bottom: 40px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      background-color: $color-dim-green;
+
+      @include from($screen-sm) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-repeat: no-repeat;
+    }
+
+    &--icon-advantage1::after {
+      top: 15px;
+      left: 19px;
+      width: 26px;
+      height: 29px;
+      background-image: url("../img/icon-advantages-1.png");
+
+      @include from($screen-sm) {
+        top: 25px;
+        left: 29px;
+      }
+    }
+
+    &--icon-advantage2::after {
+      top: 13px;
+      left: 16px;
+      width: 29px;
+      height: 31px;
+      background-image: url("../img/icon-advantages-2.png");
+
+      @include from($screen-sm) {
+        top: 23px;
+        left: 26px;
+      }
+    }
+
+    &--icon-advantage3::after {
+      top: 14px;
+      left: 18px;
+      width: 23px;
+      height: 30px;
+      background-image: url("../img/icon-advantages-3.png");
+
+      @include from($screen-sm) {
+        top: 28px;
+        left: 28px;
+      }
+    }
+
+    &--icon-advantage4::after {
+      top: 14px;
+      left: 17px;
+      width: 26px;
+      height: 31px;
+      background-image: url("../img/icon-advantages-4.png");
+
+      @include from($screen-sm) {
+        top: 24px;
+        left: 27px;
+      }
+    }
+  }
+
+  &__desc {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-left: 80px;
+    min-height: 60px;
+
+    @include from($screen-sm) {
+      min-height: auto;
+      margin-left: 0;
+
+      &::before {
+        content: counter(items);
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 256px;
+        height: 228px;
+        font-family: $set-font-family;
+        color: $color-light-gray;
+        text-align: right;
+        font-size: 280px;
+        line-height: 200px;
+        z-index: -1;
+      }
+    }
+  }
+}

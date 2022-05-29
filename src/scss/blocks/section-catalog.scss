@@ -1,0 +1,35 @@
+.section-catalog {
+  padding: 25px 0;
+  border-top: 1px solid $color-border-menu;
+
+  &__headline {
+    padding: 0 25px;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: $color-dark-black;
+  }
+
+  @include from($screen-sm) {
+    margin-bottom: -130px;
+    padding: 80px 0 50px;
+    border-top: none;
+
+    &__headline {
+      max-width: 768px;
+      margin: 0 auto 175px;
+      padding: 0 30px;
+      font-size: 60px;
+    }
+  }
+
+  @include from($screen-max) {
+    &__headline {
+      max-width: 1300px;
+      padding: 0 40px;
+    }
+
+    &__wrapper {
+      margin: 0 -40px;
+    }
+  }
+}

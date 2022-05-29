@@ -1,0 +1,35 @@
+.htmlacademy {
+  &__link {
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    transition: fill 0.3s;
+
+    &:active {
+      opacity: 0.3;
+    }
+
+    @include from($screen-sm) {
+      width: 165px;
+    }
+  }
+
+  &__name {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    color: $color-footer-gray;
+  }
+
+  &__logo {
+    display: block;
+    width: 27px;
+    height: 34px;
+  }
+}
+
+.htmlacademy__link:focus > .htmlacademy__logo > svg,
+.htmlacademy__link:hover > .htmlacademy__logo > svg {
+  fill: $color-dim-green;
+}

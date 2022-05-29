@@ -1,0 +1,7 @@
+.section-categories {
+  padding: 15px 0;
+
+  @include from($screen-max) {
+    padding: 80px 0;
+  }
+}

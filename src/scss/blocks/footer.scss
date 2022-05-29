@@ -1,0 +1,33 @@
+.footer {
+  padding-top: 35px;
+  padding-bottom: 25px;
+  background-color: $color-light-gray;
+
+  @include from($screen-sm) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  &__logo {
+    width: 130px;
+    margin: 0 auto 30px;
+
+    @include from($screen-sm) {
+      margin: 0;
+    }
+  }
+
+  &__logo-link {
+    width: 130px;
+    height: 25px;
+    display: block;
+  }
+
+  @include from($screen-sm) {
+    .footer__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

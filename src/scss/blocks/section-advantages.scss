@@ -1,0 +1,20 @@
+.section-advantages {
+  padding-bottom: 20px;
+
+  @include from($screen-sm) {
+    padding: 60px 0 0;
+    border-bottom: 1px solid $color-border-menu;
+  }
+
+  @include from($screen-max) {
+    border-bottom: none;
+  }
+
+  &__section-title {
+    margin-bottom: 40px;
+
+    @include from($screen-sm) {
+      margin-bottom: 75px;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.logo {
+  display: block;
+  position: absolute;
+  top: 13px;
+  left: 0;
+
+  &--inner {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  @include from($screen-sm) {
+    top: auto;
+    position: static;
+  }
+
+  &__image {
+    display: block;
+    width: 33px;
+    height: 38px;
+
+    @include from($screen-sm) {
+      display: none;
+    }
+  }
+
+  &__tablet,
+  &__desktop {
+    display: none;
+  }
+
+  &__tablet {
+    width: 173px;
+    height: 58px;
+
+    @include from($screen-sm) {
+      display: block;
+    }
+
+    @include from($screen-max) {
+      display: none;
+    }
+  }
+
+  &__desktop {
+    @include from($screen-max) {
+      display: block;
+    }
+  }
+
+  &__text {
+    display: block;
+    width: 101px;
+    height: 18px;
+
+    @include from($screen-sm) {
+      display: none;
+    }
+  }
+}
